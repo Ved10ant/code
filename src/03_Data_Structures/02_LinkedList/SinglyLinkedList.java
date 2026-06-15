@@ -33,7 +33,7 @@ public class SinglyLinkedList {
     public void append(int value) { // Add's node to the end of the linkedlist
         Node newNode = new Node(value);
         if (size == 0) {
-            head = newNode;
+             head = newNode;
             tail = newNode;
         } else {
             tail.next = newNode;
