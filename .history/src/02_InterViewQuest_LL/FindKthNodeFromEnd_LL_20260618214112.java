@@ -1,8 +1,7 @@
-public class hasLoop_LL {
 
+public class FindKthNodeFromEnd_LL {
     private Node head;
     private Node tail;
-    private int length;
 
     class Node {
         int value;
@@ -13,11 +12,10 @@ public class hasLoop_LL {
         }
     }
 
-    public hasLoop_LL(int value) {
+    public FindKthNodeFromEnd_LL(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
-        length = 1;
     }
 
     public Node getHead() {
@@ -26,10 +24,6 @@ public class hasLoop_LL {
 
     public Node getTail() {
         return tail;
-    }
-
-    public int getLength() {
-        return length;
     }
 
     public void printList() {
@@ -51,47 +45,28 @@ public class hasLoop_LL {
     public void makeEmpty() {
         head = null;
         tail = null;
-        length = 0;
     }
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if (length == 0) {
+        if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
             tail.next = newNode;
             tail = newNode;
         }
-        length++;
     }
 
-    public boolean hasLoop() {
-        if (head == null) {
-            return false;
-        }
-        Node slow = head;
-        Node fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast) {
-                System.out.println("Has a Loop");
-                return true;
-            } 
-        }
-        System.out.println("Has no loop");
-        return false;
-    }
+    public void FindKthNodeFromEnd_LL(int value) {
+        Node first = head;
+        Node second = head;
+        for (int i = 0; i < value; i++) {
+            if (second == null) {
+                System.out.println("The value is too large");
+                
+            }
 
-    public static void main(String[] args) {
-        hasLoop_LL mylist=new hasLoop_LL(0);
-        mylist.append(1);
-        mylist.append(2);
-        mylist.append(3);
-        mylist.append(4);
-        mylist.printList();
-        mylist.hasLoop();
-
+        }
     }
 }
