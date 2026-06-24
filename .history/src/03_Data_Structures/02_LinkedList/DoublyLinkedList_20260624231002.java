@@ -1,4 +1,3 @@
-
 public class DoublyLinkedList {
     private Node head;
     private Node tail;
@@ -41,29 +40,20 @@ public class DoublyLinkedList {
         length++;
     }
 
-    public Node removeLast() {
+    public void removeLast() {
         if (length == 0) {
-            return null;
+            return;
         }
         Node temp = tail;
         tail = tail.prev;
-        tail.next = null;
         temp.prev = null;
-        length--;
-        if (length == 0) {
-            head = null;
-            tail = null;
-        }
-        return temp;
+        tail.next = null;
     }
 
     public static void main(String[] args) {
         DoublyLinkedList ll = new DoublyLinkedList(3);
         ll.append(4);
         ll.append(5);
-        ll.append(6);
-        ll.append(7);
-        ll.removeLast();
         ll.printList();
     }
 }

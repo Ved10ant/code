@@ -41,20 +41,19 @@ public class DoublyLinkedList {
         length++;
     }
 
-    public Node removeLast() {
+    public void removeLast() {
         if (length == 0) {
-            return null;
+            return;
         }
         Node temp = tail;
         tail = tail.prev;
-        tail.next = null;
         temp.prev = null;
+        tail.next = null;
         length--;
         if (length == 0) {
             head = null;
             tail = null;
         }
-        return temp;
     }
 
     public static void main(String[] args) {
