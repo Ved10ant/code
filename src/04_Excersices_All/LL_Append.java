@@ -86,6 +86,9 @@ public class LL_Append {
     public static void main(String[] args) {
         LL_Append ll = new LL_Append(2);
         ll.append(3);
+        ll.append(3);
+        ll.append(3);
+        ll.printAll();
     }
 }
 
