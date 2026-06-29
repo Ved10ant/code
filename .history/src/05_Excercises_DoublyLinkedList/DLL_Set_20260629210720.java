@@ -96,16 +96,7 @@ public class DLL_Set {
         Node temp = get(index);
         if (temp != null) {
             temp.value = value;
-            return true;
         }
         return true;
-    }
-    public static void main(String[] args) {
-        DLL_Set dll = new DLL_Set(10);
-        dll.append(20);
-        dll.append(30);
-        dll.append(40);
-        dll.set(100, 2);
-        dll.printAll();
     }
 }

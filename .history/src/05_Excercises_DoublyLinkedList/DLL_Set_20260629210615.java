@@ -1,4 +1,5 @@
 
+
 public class DLL_Set {
 
     private Node head;
@@ -78,34 +79,13 @@ public class DLL_Set {
         length++;
     }
 
-    public Node get(int index) {
-        if (index < 0 || index >= length) {
-            return null;
-        }
-        Node temp = head;
-        for (int i = 0; i < index; i++) {
-            temp = temp.next;
-        }
-        return temp;
-    }
-
     public boolean set(int value, int index) {
-        if (length == 0) {
+        Node newNode = new Node(value);
+        if(length == 0){
             return false;
         }
-        Node temp = get(index);
-        if (temp != null) {
-            temp.value = value;
-            return true;
-        }
+        Node temp = head;
+        
         return true;
-    }
-    public static void main(String[] args) {
-        DLL_Set dll = new DLL_Set(10);
-        dll.append(20);
-        dll.append(30);
-        dll.append(40);
-        dll.set(100, 2);
-        dll.printAll();
     }
 }
